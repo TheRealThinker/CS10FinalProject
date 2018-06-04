@@ -60,7 +60,7 @@ void setup() {
   raccoon[0] = loadImage("raccoonright.png");
   raccoon[1] = loadImage("raccoonleft.png");
   raccoon[2] = loadImage("raccoonattackright.png");
-  raccoon[3] = loadImage("raccooattackleft.png");
+  raccoon[3] = loadImage("raccoonattackleft.png");
   
   horse[0] = loadImage("horseright.png");
   horse[1] = loadImage("horseleft.png");
