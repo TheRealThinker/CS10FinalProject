@@ -39,7 +39,7 @@ void setup() {
   queen[3] = loadImage("queenattackleft.png");
   queen[4] = loadImage("queenidleright.png");
   queen[5] = loadImage("queenidleleft.png");
-  
+
   ron[0] = loadImage("ron.png");
   ron[1] = loadImage("ronranged1right.png");
   ron[2]= loadImage("ronranged2right.png");
@@ -49,20 +49,22 @@ void setup() {
   ron[6]= loadImage("ronranged3left.png");
   ron[7]= loadImage("ronprojectileleft.png");
   ron[8]= loadImage("ronprojectileright.png");
-  
+
   raccoon[0] = loadImage("raccoonright.png");
   raccoon[1] = loadImage("raccoonleft.png");
   raccoon[2] = loadImage("raccoonattackright.png");
   raccoon[3] = loadImage("raccooattackleft.png");
-  
+
   horse[0] = loadImage("horseright.png");
   horse[1] = loadImage("horseleft.png");
   horse[2] = loadImage("horseprojectileright.png");
   horse[3] = loadImage("horseprojectileleft.png");
-  
 }
 
 void draw() {
-image(incredible[5], 100, 100);
+
+  imageMode(CENTER);
+  textMode(CENTER);
+  
   
 }
