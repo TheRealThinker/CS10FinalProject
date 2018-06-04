@@ -21,9 +21,15 @@ int player2;
 int damage;
 int goalX;
 int goalY;
-
+int titlepage;
 void setup() {
   size(1800, 700);
+  
+  
+  
+  
+  loadImage("titlepage.png");
+  
   incredible[0] = loadImage("incredibleright.png");
   incredible[1] = loadImage("incredibleleft.png");
   incredible[2] = loadImage("incredibleattackright.png");
@@ -69,8 +75,45 @@ void setup() {
   
 }
 
-void draw() {
-image(horse[2], 100, 100);
+void draw( ) {
+  background(0);
+  textFont(createFont("Arial", 30));
+  if (titlepage ==0) {
+    text("click mouse to enter", 70, 450);
+   text("revision version 49065.32 made by Sam and Bryn", 50, 500);
+}
+    if (titlepage ==1) {  
+      image(titlepage, 100, 100);
+      
+      text("welcome to...! ", 50, 450);
+   text("SENSE OF RIGHT ALLIANCE VS. REVENGERS", 50,500);
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 if(direction ==4){
  
@@ -120,4 +163,14 @@ if(direction ==2){
       }
    if (abs(x-goalX-25)<80 && abs(y-goalY-25)<80) {
      damage -=5;}
+     
+     
+     
 }}
+
+
+
+
+void mousePressed() {
+  titlepage = titlepage +1;
+}
