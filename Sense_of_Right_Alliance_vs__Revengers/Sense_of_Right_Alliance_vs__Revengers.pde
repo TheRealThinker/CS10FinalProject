@@ -1,7 +1,7 @@
 // Final Project
 // Sam Lee and Bryn Bergsma
 
-PImage titlepage = loadImage("titepage.png");
+PImage introscreen;
 
 PImage[] incredible = new PImage[6];
 
@@ -21,24 +21,24 @@ int x1, y1, x2, y2;
 int player1;
 int player2;
 int damage;
-<<<<<<< HEAD
+
 int goalX;
 int goalY;
-int titlepage;
-=======
+int gamescreen;
 
 
 
 
->>>>>>> 5e7254a823060ff1dc10dd8f476da73b9a373200
+
+
 void setup() {
-  size(1800, 700);
-  
-  
-  
-  
-  loadImage("titlepage.png");
-  
+
+
+  size(1200, 700);
+
+
+  introscreen = loadImage("introscreen.png");
+
   incredible[0] = loadImage("incredibleright.png");
   incredible[1] = loadImage("incredibleleft.png");
   incredible[2] = loadImage("incredibleattackright.png");
@@ -83,50 +83,23 @@ void setup() {
   horse[3] = loadImage("horseprojectileleft.png");
 }
 
-<<<<<<< HEAD
-void draw( ) {
-  background(0);
-  textFont(createFont("Arial", 30));
-  if (titlepage ==0) {
-    text("click mouse to enter", 70, 450);
-   text("revision version 49065.32 made by Sam and Bryn", 50, 500);
-}
-    if (titlepage ==1) {  
-      image(titlepage, 100, 100);
-      
-      text("welcome to...! ", 50, 450);
-   text("SENSE OF RIGHT ALLIANCE VS. REVENGERS", 50,500);
 
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-=======
 void draw() {
-  image(horse[2], 100, 100);
->>>>>>> 5e7254a823060ff1dc10dd8f476da73b9a373200
+  
+  imageMode(CENTER);
+  textMode(CENTER);
+  
+  textFont(createFont("Arial", 30));
+  if (gamescreen ==0) {
+    background(introscreen);
+    text("welcome to...! ", 50, 450);
+    text("SENSE OF RIGHT ALLIANCE VS. REVENGERS", 350, 100);
+    text("click mouse to enter", 70, 600);
+    text("revision version 49065.32 made by Sam and Bryn", 50, 500);
+  }
+
+
+
 
   if (direction2 ==4) {
 
@@ -137,11 +110,11 @@ void draw() {
     y2 = y2 - 15;
   }
   if (direction2 ==3) {
-   
+
     y2 = y2 + 15;
   }
   if (direction2 ==2) {
-    
+
     x2 = x2 + 15;
   }
   if (direction1 ==4) {
@@ -153,11 +126,11 @@ void draw() {
     y1 = y1 - 15;
   }
   if (direction1 ==3) {
-    
+
     y1 = y1 + 15;
   }
   if (direction1 ==2) {
-    
+
     x1 = x1 + 15;
   }
 
@@ -165,6 +138,9 @@ void draw() {
 
   if (keyPressed) {
 
+    if (keyCode == ENTER) {
+      gamescreen = gamescreen + 1;
+    }
 
     if (keyCode == RIGHT) {
       direction2 = 3;
@@ -200,27 +176,13 @@ void draw() {
       direction1 = 2;
     }
 
-<<<<<<< HEAD
-      if (keyCode == DOWN || key == 's' || key =='S' ) {
-       
-        direction = 2;
-      }
-   if (abs(x-goalX-25)<80 && abs(y-goalY-25)<80) {
-     damage -=5;}
-     
-     
-     
-}}
 
 
-
-
-void mousePressed() {
-  titlepage = titlepage +1;
-=======
+    if (abs(x1-25)<80 && abs(y1-25)<80) {
+      damage -=5;
+    }
     if (abs(x2-25)<80 && abs(y2-25)<80) {
       damage -=5;
     }
   }
->>>>>>> 5e7254a823060ff1dc10dd8f476da73b9a373200
 }
