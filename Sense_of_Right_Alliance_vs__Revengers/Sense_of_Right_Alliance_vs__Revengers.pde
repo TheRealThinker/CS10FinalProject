@@ -21,6 +21,7 @@ int x1, y1, x2, y2;
 int player1;
 int player2;
 int damage;
+int animationCycle;
 
 int goalX;
 int goalY;
@@ -85,13 +86,14 @@ void setup() {
 
 
 void draw() {
-  
+  background(introscreen);
+ 
   imageMode(CENTER);
   textMode(CENTER);
-  
+
   textFont(createFont("Arial", 30));
   if (gamescreen ==0) {
-    background(introscreen);
+
     text("welcome to...! ", 50, 450);
     text("SENSE OF RIGHT ALLIANCE VS. REVENGERS", 350, 100);
     text("click mouse to enter", 70, 600);
@@ -176,13 +178,32 @@ void draw() {
       direction1 = 2;
     }
 
-
-
     if (abs(x1-25)<80 && abs(y1-25)<80) {
       damage -=5;
     }
     if (abs(x2-25)<80 && abs(y2-25)<80) {
       damage -=5;
     }
+  }
+}
+
+void walkAnimation(String image) {
+  ++animationCycle;
+  
+  if(animationCycle == 1) {
+    rotate(50);
+  }
+  if(animationCycle == 2) {
+    rotate(-50);
+  }
+  if(animationCycle == 3) {
+    rotate(-50);
+  }
+  if(animationCycle == 4) {
+    rotate(50);
+  }
+  
+  if(animationCycle == 5) {
+    animationCycle = 0;
   }
 }
