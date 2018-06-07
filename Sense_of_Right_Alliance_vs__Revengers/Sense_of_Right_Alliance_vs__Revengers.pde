@@ -87,9 +87,11 @@ void setup() {
 
 void draw() {
   background(introscreen);
- 
+
   imageMode(CENTER);
   textMode(CENTER);
+
+  keyPressed();
 
   textFont(createFont("Arial", 30));
   if (gamescreen ==0) {
@@ -100,9 +102,17 @@ void draw() {
     text("revision version 49065.32 made by Sam and Bryn", 50, 500);
   }
 
+  if (abs(x1-25)<80 && abs(y1-25)<80) {
+    damage -=5;
+  }
+  if (abs(x2-25)<80 && abs(y2-25)<80) {
+    damage -=5;
+  }
 
+  image(incredible[1], x1, y1);
+}
 
-
+void characterMovement() {
   if (direction2 ==4) {
 
     x2 = x2 - 15;
@@ -135,8 +145,15 @@ void draw() {
 
     x1 = x1 + 15;
   }
+}
 
 
+
+
+
+
+
+void keyPressed() {
 
   if (keyPressed) {
 
@@ -146,64 +163,73 @@ void draw() {
 
     if (keyCode == RIGHT) {
       direction2 = 3;
+      walkAnimation();
+      characterMovement();
     }
 
     if (keyCode == 'a') {
       direction1 = 3;
+      walkAnimation();
+      characterMovement();
     }
 
     if (keyCode == LEFT) {
 
       direction2 = 4;
+      walkAnimation();
+      characterMovement();
     }
     if (keyCode == 'd') {
 
       direction1 = 4;
+      walkAnimation();
+      characterMovement();
     }
 
     if (keyCode == UP) {
 
       direction2 = 1;
+      walkAnimation();
+      characterMovement();
     }
     if (keyCode == 'w') {
 
       direction1 = 1;
+      walkAnimation();
+      characterMovement();
     }
     if (keyCode == DOWN) {
 
       direction2 = 2;
+      walkAnimation();
+      characterMovement();
     }
     if (keyCode == 's') {
 
       direction1 = 2;
-    }
-
-    if (abs(x1-25)<80 && abs(y1-25)<80) {
-      damage -=5;
-    }
-    if (abs(x2-25)<80 && abs(y2-25)<80) {
-      damage -=5;
+      walkAnimation();
+      characterMovement();
     }
   }
 }
 
-void walkAnimation(String image) {
+void walkAnimation() {
   ++animationCycle;
-  
-  if(animationCycle == 1) {
+
+  if (animationCycle == 1) {
     rotate(50);
   }
-  if(animationCycle == 2) {
+  if (animationCycle == 2) {
     rotate(-50);
   }
-  if(animationCycle == 3) {
+  if (animationCycle == 3) {
     rotate(-50);
   }
-  if(animationCycle == 4) {
+  if (animationCycle == 4) {
     rotate(50);
   }
-  
-  if(animationCycle == 5) {
+
+  if (animationCycle == 5) {
     animationCycle = 0;
   }
 }
